@@ -8,19 +8,6 @@
 [dsh](https://www.npmjs.com/package/@deepseek-ai/dsh)（DeepSeek Harness）、
 [new-api](https://github.com/QuantumNous/new-api) 等任意工具使用。
 
-**背景**：[Codely](https://codely.tuanjie.cn) 是 [Unity 中国](https://www.unity.cn)（Tuanjie / 团结引擎）旗下的
-AI 编程智能体，官方 agent 名为 **Tuanjie Cowork**（媒体亦称「团结 Codely」）；账号体系为 Unity ID，
-模型推理走 `codely-litellm.tuanjie.cn` 的 LiteLLM 网关。模型额度属于**你自己的 Codely 账号**。
-
-**本项目做什么**：在本地/服务器跑一个小代理，把工具发出的 OpenAI 格式请求转发到 Codely 的 LiteLLM
-网关，并自动补上网关强制校验的**客户端身份头、会话标识与请求签名**——这些校验导致第三方工具无法直连
-网关（协议细节见 [docs/PROTOCOL.md](docs/PROTOCOL.md)）。**不改造工具、不绕过计费**：用的就是你账号
-自己的额度，只是把官方 agent 独占的模型通道「代理」给常用工具用，并提供多账号额度统一管理与一键切换。
-
-> ⚠️ **免责声明**：本项目为**非官方个人项目**，与 Unity 中国 / Codely 无任何隶属关系；接口为个人
-> 逆向所得、**随时可能变更**；仅供把自己已购的额度接入常用工具链使用，请遵守 Codely / Unity 服务
-> 条款，使用风险自负。如有侵权请联系删除。
-
 ## 功能特性
 
 - **OpenAI 兼容代理**：`/v1/chat/completions`、`/v1/models` 全兼容，`sk-` 密钥失效自动刷新
