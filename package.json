@@ -1,0 +1,29 @@
+{
+  "name": "codely-dsh-bridge",
+  "version": "1.0.1",
+  "description": "把 Codely（Unity 中国旗下 AI 智能体，官方 agent：Tuanjie Cowork）账号的模型额度经本地代理接入 dsh（DeepSeek Harness）使用，支持多账号管理与丝滑切换",
+  "main": "codely-proxy.js",
+  "bin": {
+    "codely-dsh-proxy": "./codely-proxy.js",
+    "codely-dsh-setup": "./setup.js",
+    "codely-dsh-uninstall": "./uninstall.js"
+  },
+  "scripts": {
+    "login": "node login.js",
+    "account": "node account.js",
+    "models": "node models.js",
+    "backend-probe": "node backend-probe.js",
+    "quota": "node codely-quota.js",
+    "start": "node codely-proxy.js",
+    "setup": "node setup.js",
+    "uninstall": "node uninstall.js",
+    "test": "node test/smoke.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

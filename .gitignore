@@ -1,0 +1,9 @@
+node_modules/
+key.cache
+session.cache
+codely-creds.json
+accounts/
+*.log
+api-key.txt
+.failover-state.json
+*.bak
